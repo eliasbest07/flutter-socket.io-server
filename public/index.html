@@ -17,9 +17,16 @@
         socket.on('disconnect',function(){
             console.log('Perdimos conexion con el servidor');
         });
-        socket.emit('mensaje', { nombre: 'elias'} ); // { nombre: 'elias'}
+      //  socket.emit('mensaje', { nombre: 'elias'} ); // { nombre: 'elias'}
         socket.on('mensaje', function( payload ){
             console.log('Mensaje desde el admin:',payload);
+        });
+        socket.on('nuevo-mensaje', function( payload ){
+            console.log('Mensaje :',payload);
+        });
+        socket.on('bandas-act', function( payload ){
+            console.clear();
+            console.table(payload);
         });
     </script>
 </body>
